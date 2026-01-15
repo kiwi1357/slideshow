@@ -1,0 +1,243 @@
+/* Container - Mobile Bottom Sheet */
+.panel {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 1000;
+  background: rgba(10, 10, 10, 0.98);
+  backdrop-filter: blur(30px);
+  height: 85vh;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-top: 1px solid rgba(100, 255, 170, 0.2);
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: white;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Header & Tabs */
+.header {
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.tabGroup {
+  display: flex;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.3rem;
+  border-radius: 999px;
+}
+
+.tabButton {
+  padding: 0.6rem 1.2rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  background: transparent;
+  color: #6b7280;
+  border: none;
+  cursor: pointer;
+}
+
+.tabButtonActive {
+  background: #64ffaaaa;
+  color: #000;
+}
+
+/* Content Area */
+.scrollArea {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Bulk Selection Sticky Bar */
+.selectionBar {
+  background: #64ffaaaa;
+  margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  color: #000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.bulkActions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.bulkInput {
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #000;
+  width: 50px;
+  padding: 0.5rem;
+  border-radius: 10px;
+  font-weight: 900;
+  text-align: center;
+  outline: none;
+}
+
+.applyButton {
+  background: #000;
+  color: #64ffaaaa;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-weight: 900;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* Playlist Items */
+.selectAllContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem;
+  color: #9ca3af;
+  cursor: pointer;
+}
+
+.imageRow {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.8rem 1rem;
+  border-radius: 24px;
+  margin-bottom: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: border-color 0.2s, background 0.2s;
+  list-style: none;
+}
+
+.imageRowSelected {
+  border-color: #64ffaaaa;
+  background: rgba(100, 255, 170, 0.08);
+}
+
+.thumbnail {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 12px;
+  background: #000;
+}
+
+.captionInput {
+  background: transparent;
+  border: none;
+  color: white;
+  width: 100%;
+  font-weight: 700;
+  font-size: 0.95rem;
+  outline: none;
+  padding: 2px 0;
+}
+
+.durationInput {
+  background: transparent;
+  border: none;
+  color: #64ffaaaa;
+  font-weight: 900;
+  width: 45px;
+  outline: none;
+  font-size: 1rem;
+}
+
+/* Selection Checkbox */
+.checkbox {
+  width: 22px;
+  height: 22px;
+  accent-color: #64ffaaaa;
+  cursor: pointer;
+}
+
+/* Global Settings Form */
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.label {
+  display: block;
+  font-size: 0.75rem;
+  color: #4b5563;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+}
+
+.optionCard {
+  padding: 1.2rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 20px;
+  text-align: center;
+  border: 2px solid transparent;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.optionCardActive {
+  border-color: #64ffaaaa;
+  background: rgba(100, 255, 170, 0.1);
+  color: #64ffaaaa;
+}
+
+/* Controls */
+.rangeInput {
+  width: 100%;
+  accent-color: #64ffaaaa;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  appearance: none;
+  outline: none;
+}
+
+.rangeInput::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #64ffaaaa;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Scrollbar Customization */
+.scrollArea::-webkit-scrollbar {
+  width: 5px;
+}
+
+.scrollArea::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollArea::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
